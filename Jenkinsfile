@@ -2,7 +2,7 @@ node('') {
   createStage('Setup')
   stage('Quality Gates') {
     parallel (
-      'Unit Test': { sh "sleep 3"; createStage('Unit Test') },
+      'Unit Test': { createStage('Unit Test') },
       'Lint': { createStage('Lint') }
     )
   }
@@ -15,6 +15,11 @@ node('') {
 
 def createStage(name) {
   stage("$name") {
+    sh "sleep ${randomSleep()}"
     echo "$name"
   }
+}
+
+def randomSleep() {
+  Math.abs(new Random().nextInt() % 10) + 1
 }
