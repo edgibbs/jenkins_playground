@@ -2,8 +2,8 @@ node('') {
   createStage('Setup')
   stage('Quality Gates') {
     parallel (
-      unitTest: { createStage('Unit Test') },
-      lint: { createStage('Lint') }
+      'Unit Test': { sh "sleep 3"; createStage('Unit Test') },
+      'Lint': { createStage('Lint') }
     )
   }
   createStage('Acceptance Tests')
