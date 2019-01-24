@@ -21,5 +21,5 @@ def createStage(name) {
 }
 
 def randomSleep() {
-  Math.abs(new Random().nextInt() % 10) + 1
+  (new Random().nextInt().abs() % 10) + 1
 }
