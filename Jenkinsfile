@@ -1,8 +1,8 @@
 node('') {
   createStage('Setup')
-  stages {
-    createStage('Unit Test')
-    createStage('Lint')
+  parallel {
+    unitTest: { createStage('Unit Test') },
+    lint: { createStage('Lint') }
   }
   createStage('Acceptance Tests')
   createStage('Build Docker Image')
