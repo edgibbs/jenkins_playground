@@ -1,9 +1,9 @@
 node('') {
   createStage('Setup')
-  parallel {
+  parallel (
     unitTest: { createStage('Unit Test') },
     lint: { createStage('Lint') }
-  }
+  )
   createStage('Acceptance Tests')
   createStage('Build Docker Image')
   createStage('Tag Repository')
