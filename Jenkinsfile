@@ -1,6 +1,6 @@
 node('') {
   createStage('Setup')
-  parallel {
+  stages {
     createStage('Unit Test')
     createStage('Lint')
   }
