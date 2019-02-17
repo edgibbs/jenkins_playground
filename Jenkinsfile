@@ -16,6 +16,9 @@ def buildPullRequest() {
        )
     }
     createStage('Acceptance Tests')
+    stage('Test Cleanup') {
+      sh "docker stop java1"
+    }
     createStage('SemVer Check')
   }
 }
