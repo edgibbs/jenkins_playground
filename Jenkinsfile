@@ -19,7 +19,7 @@ def buildPullRequest() {
     /*comment*/
     stage('Test Cleanup') {
       sh 'echo $PATH'
-      sh "docker stop java1"
+      sh "docker stop java1 || true"
     }
     createStage('SemVer Check')
   }
