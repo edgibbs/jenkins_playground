@@ -16,6 +16,7 @@ def buildPullRequest() {
        )
     }
     createStage('Acceptance Tests')
+    /*comment*/
     stage('Test Cleanup') {
       sh "docker stop java1"
     }
