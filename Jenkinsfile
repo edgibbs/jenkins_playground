@@ -26,6 +26,11 @@ def buildPullRequest() {
         writeYaml file: "test.yaml", data: [ 'key': 'value' ]
         sh "git add test.yaml"
         sh "git commit -am 'Add this'"
+        try {
+          sh "git commit -am 'Add this'"
+        } catch (Exception e) {
+          echo "This blew up ${e}"
+        }
         sh 'git push origin master'
       }
       sh 'echo $PATH'
