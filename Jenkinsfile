@@ -23,6 +23,7 @@ def buildPullRequest() {
         sh "git config --global user.email fake@fake.net"
         sh "git config --global user.name fake"
         writeYaml file: "test.yaml", data: [ 'key': 'value' ]
+        sh "git add test.yaml"
         sh "git commit -am 'Add this'"
         sh 'git push origin master'
       }
