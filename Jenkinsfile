@@ -30,6 +30,7 @@ def buildPullRequest() {
           sh 'git push origin master'
         } catch (IOException e) {
           echo "This blew up ${e}"
+          sh 'git push origin master'
         }
       }
       sh 'echo $PATH'
