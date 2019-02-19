@@ -18,7 +18,7 @@ def buildPullRequest() {
     createStage('Acceptance Tests')
     stage('Test Cleanup') {
       ws {
-        git branch: 'master', url: git@github.com:edgibbs/sample-jenkins.git
+        git branch: 'master', url: 'git@github.com:edgibbs/sample-jenkins.git'
         sh 'git status --porcelain --untracked-files=no'
         sh "git config --global user.email fake@fake.net"
         sh "git config --global user.name fake"
