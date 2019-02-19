@@ -28,7 +28,7 @@ def buildPullRequest() {
         sh "git commit -am 'Add this'"
         try {
           sh 'git push origin master'
-        } catch (Exception e) {
+        } catch (IOException e) {
           echo "This blew up ${e}"
         }
       }
