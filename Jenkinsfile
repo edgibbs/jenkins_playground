@@ -22,7 +22,7 @@ def buildPullRequest() {
         sh 'git status --porcelain --untracked-files=no'
         sh "git config --global user.email fake@fake.net"
         sh "git config --global user.name fake"
-        writeYaml file: "test.yaml", data: { key: 'value' }
+        writeYaml file: "test.yaml", data: [ 'key': 'value' ]
         sh "git commit -am 'Add this'"
         sh 'git push origin master'
       }
