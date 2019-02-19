@@ -27,11 +27,10 @@ def buildPullRequest() {
         sh "git add test.yaml"
         sh "git commit -am 'Add this'"
         try {
-          sh "git commit -am 'Add this'"
         } catch (Exception e) {
+          sh 'git push origin master'
           echo "This blew up ${e}"
         }
-        sh 'git push origin master'
       }
       sh 'echo $PATH'
     }
