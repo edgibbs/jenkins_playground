@@ -1,5 +1,3 @@
-@Library('jenkins-pipeline-utils') _
-
 switch(env.BUILD_JOB_TYPE) {
   case "master": buildMaster(); break;
   case "release":releasePipeline(); break;
